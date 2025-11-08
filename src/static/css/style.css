@@ -1,0 +1,134 @@
+/* Number Guessing Game — clean, responsive styles */
+:root{
+  --bg1:#f6d365;
+  --bg2:#fda085;
+  --card-bg: rgba(255,255,255,0.88);
+  --muted:#6b7280;
+  --peach-1: #ffd7be;
+  --peach-2: #ffc4a8;
+  --peach-3: #ffe7d8;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(135deg,var(--bg1),var(--bg2));
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.app{width:100%; max-width:920px}
+
+.container{
+  background: var(--card-bg);
+  border-radius:16px;
+  padding:28px;
+  box-shadow: 0 10px 30px rgba(15,23,42,0.12);
+  border: 1px solid rgba(255,255,255,0.6);
+  backdrop-filter: blur(6px);
+}
+
+h1{
+  margin:0 0 18px 0;
+  text-align:center;
+  color: #111827;
+  font-size:1.4rem;
+}
+
+/* overall layout: input above, buttons below (centered) */
+.game-row{
+  display:flex;
+  flex-direction:column;
+  gap:16px;
+  width:100%;
+  align-items:center;
+}
+
+/* centered large square input */
+.guess-input{
+  width:70%;
+  max-width:360px;
+  aspect-ratio: 1 / 1;
+  border-radius:14px;
+  border: 1px solid rgba(17,24,39,0.06);
+  background: #ffffff;
+  font-size:2.4rem;
+  text-align:center;
+  padding:0.2rem;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06) inset, 0 6px 18px rgba(2,6,23,0.04);
+  transition: transform .12s ease, box-shadow .12s ease;
+  appearance: textfield;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
+}
+.guess-input:focus{
+  outline:none;
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(15,23,42,0.10);
+}
+
+/* hide native number spinner controls */
+.guess-input::-webkit-outer-spin-button,
+.guess-input::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+  margin:0;
+}
+
+/* button row under the input */
+.game-row .right{
+  display:flex;
+  gap:12px;
+  width:100%;
+  justify-content:center;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  padding:12px 16px;
+  border-radius:12px;
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #6b2f1f; /* dark brown text for peach buttons */
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+  background-clip: padding-box;
+}
+
+/* peach-styled buttons */
+.btn-guess{
+  background: linear-gradient(180deg,var(--peach-1),var(--peach-2));
+}
+
+.btn-restart{
+  background: linear-gradient(180deg,var(--peach-3),var(--peach-1));
+}
+
+.btn:hover{ transform: translateY(-3px); filter: brightness(1.02) }
+.btn:active{ transform: translateY(-1px) scale(.995) }
+.btn:focus{ outline: 3px solid rgba(0,0,0,0.06); outline-offset: 3px }
+
+.msg, .message{
+  margin-top:18px;
+  text-align:center;
+  color:#0f172a;
+  font-weight:600;
+}
+
+p.attempts{ text-align:center; color:var(--muted); margin-top:8px }
+
+/* responsive tweaks */
+@media (max-width:720px){
+  .guess-input{ width:70%; max-width:260px }
+  .game-row .right{ gap:8px }
+  .btn{ padding:10px 12px }
+}

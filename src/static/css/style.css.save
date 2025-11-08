@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #4CAF50;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+.reset {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.reset a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.reset a:hover {
+    text-decoration: underline;
+}
+body {
+    font-family: Arial, sans-serif;
+    padding: 2rem;
+    background: #f7f7f7;
+    color: #222;
+}
+.container { max-width: 600px; margin: 0 auto; }
+.msg { margin-top: 1rem; font-weight: bold; color: #0b5; }
+input[type="number"] { padding: 6px; width: 120px; }
+button { padding: 6px 10px; margin-left:6px; }
+
