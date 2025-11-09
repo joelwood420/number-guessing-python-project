@@ -1,12 +1,13 @@
-/* Number Guessing Game — clean, responsive styles */
+/* Number Guessing Game — neon purple, black and white theme */
 :root{
-  --bg1:#f6d365;
-  --bg2:#fda085;
-  --card-bg: rgba(255,255,255,0.88);
-  --muted:#6b7280;
-  --peach-1: #ffd7be;
-  --peach-2: #ffc4a8;
-  --peach-3: #ffe7d8;
+  --bg1:#1a0f2e;
+  --bg2:#000000;
+  --card-bg: rgba(255,255,255,0.95);
+  --muted:#9333ea;
+  --neon-purple-1: #a855f7;
+  --neon-purple-2: #9333ea;
+  --neon-purple-3: #c084fc;
+  --neon-glow: #d946ef;
 }
 
 *{box-sizing:border-box}
@@ -29,16 +30,17 @@ body{
   background: var(--card-bg);
   border-radius:16px;
   padding:28px;
-  box-shadow: 0 10px 30px rgba(15,23,42,0.12);
-  border: 1px solid rgba(255,255,255,0.6);
+  box-shadow: 0 10px 30px rgba(147,51,234,0.3), 0 0 20px rgba(217,70,239,0.2);
+  border: 2px solid var(--neon-purple-1);
   backdrop-filter: blur(6px);
 }
 
 h1{
   margin:0 0 18px 0;
   text-align:center;
-  color: #111827;
+  color: #000000;
   font-size:1.4rem;
+  text-shadow: 0 0 10px var(--neon-glow);
 }
 
 /* overall layout: input above, buttons below (centered) */
@@ -56,12 +58,13 @@ h1{
   max-width:360px;
   aspect-ratio: 1 / 1;
   border-radius:14px;
-  border: 1px solid rgba(17,24,39,0.06);
+  border: 2px solid var(--neon-purple-2);
   background: #ffffff;
+  color: #000000;
   font-size:2.4rem;
   text-align:center;
   padding:0.2rem;
-  box-shadow: 0 6px 18px rgba(15,23,42,0.06) inset, 0 6px 18px rgba(2,6,23,0.04);
+  box-shadow: 0 6px 18px rgba(147,51,234,0.2) inset, 0 6px 18px rgba(147,51,234,0.1);
   transition: transform .12s ease, box-shadow .12s ease;
   appearance: textfield;
   -moz-appearance: textfield;
@@ -70,7 +73,8 @@ h1{
 .guess-input:focus{
   outline:none;
   transform: translateY(-3px);
-  box-shadow: 0 14px 30px rgba(15,23,42,0.10);
+  box-shadow: 0 14px 30px rgba(147,51,234,0.3), 0 0 20px var(--neon-glow);
+  border-color: var(--neon-glow);
 }
 
 /* hide native number spinner controls */
@@ -95,32 +99,36 @@ h1{
   gap:8px;
   padding:12px 16px;
   border-radius:12px;
-  border: 1px solid rgba(255,255,255,0.25);
-  color: #6b2f1f; /* dark brown text for peach buttons */
+  border: 2px solid var(--neon-purple-2);
+  color: #ffffff;
   font-weight:700;
   cursor:pointer;
-  box-shadow: 0 8px 20px rgba(2,6,23,0.06);
+  box-shadow: 0 8px 20px rgba(147,51,234,0.3);
   transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
   background-clip: padding-box;
 }
 
-/* peach-styled buttons */
+/* neon purple styled buttons */
 .btn-guess{
-  background: linear-gradient(180deg,var(--peach-1),var(--peach-2));
+  background: linear-gradient(180deg,var(--neon-purple-1),var(--neon-purple-2));
 }
 
 .btn-restart{
-  background: linear-gradient(180deg,var(--peach-3),var(--peach-1));
+  background: linear-gradient(180deg,var(--neon-purple-3),var(--neon-purple-1));
 }
 
-.btn:hover{ transform: translateY(-3px); filter: brightness(1.02) }
+.btn:hover{ 
+  transform: translateY(-3px); 
+  box-shadow: 0 14px 30px rgba(147,51,234,0.3), 0 0 20px var(--neon-glow);
+  filter: brightness(1.1);
+}
 .btn:active{ transform: translateY(-1px) scale(.995) }
-.btn:focus{ outline: 3px solid rgba(0,0,0,0.06); outline-offset: 3px }
+.btn:focus{ outline: 3px solid var(--neon-glow); outline-offset: 3px }
 
 .msg, .message{
   margin-top:18px;
   text-align:center;
-  color:#0f172a;
+  color:#000000;
   font-weight:600;
 }
 
