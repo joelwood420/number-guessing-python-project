@@ -33,6 +33,7 @@ body{
   box-shadow: 0 10px 30px rgba(147,51,234,0.3), 0 0 20px rgba(217,70,239,0.2);
   border: 2px solid var(--neon-purple-1);
   backdrop-filter: blur(6px);
+  position: relative;
 }
 
 h1{
@@ -84,7 +85,7 @@ h1{
   margin:0;
 }
 
-/* button row under the input */
+/* button row under the input - now only for guess button */
 .game-row .right{
   display:flex;
   gap:12px;
@@ -113,8 +114,37 @@ h1{
   background: linear-gradient(180deg,var(--neon-purple-1),var(--neon-purple-2));
 }
 
+/* circular restart button in top right corner */
 .btn-restart{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border-radius: 50%;
   background: linear-gradient(180deg,var(--neon-purple-3),var(--neon-purple-1));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: transparent; /* hide the text */
+  text-indent: -9999px; /* move text off screen */
+  z-index: 10; /* ensure it's above other elements */
+  border: 2px solid var(--neon-purple-2);
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(147,51,234,0.3);
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+}
+
+.btn-restart::before {
+  content: "↻";
+  font-size: 20px;
+  font-weight: bold;
+  color: #ffffff;
+  text-indent: 0; /* reset text indent for icon */
+  position: absolute;
+  pointer-events: none; /* ensure clicks go through to button */
 }
 
 .btn:hover{ 

@@ -8,6 +8,11 @@
 <body>
   <div class="app">
     <div class="container">
+      <!-- restart button outside the form -->
+      <form method="post" action="/restart">
+        <button type="submit" class="btn btn-restart"></button>
+      </form>
+      
       <h1>Guess a number between 1 and 100</h1>
 
       <form method="post" action="/guess" class="game-row">
@@ -16,8 +21,6 @@
         </div>
         <div class="right">
           <button type="submit" class="btn btn-guess">Guess</button>
-          <!-- restart uses formaction so it posts to /restart but stays in this form for layout -->
-          <button type="submit" formaction="/restart" formmethod="post" class="btn btn-restart">Restart</button>
         </div>
       </form>
 
