@@ -40,7 +40,7 @@ h1{
   margin:0 0 18px 0;
   text-align:center;
   color: #000000;
-  font-size:1.4rem;
+  font-size:2rem;
   text-shadow: 0 0 10px var(--neon-glow);
 }
 
@@ -70,6 +70,7 @@ h1{
   appearance: textfield;
   -moz-appearance: textfield;
   -webkit-appearance: none;
+  margin-left: 24px;
 }
 .guess-input:focus{
   outline:none;
@@ -112,6 +113,10 @@ h1{
 /* neon purple styled buttons */
 .btn-guess{
   background: linear-gradient(180deg,var(--neon-purple-1),var(--neon-purple-2));
+  width: 70%;
+  max-width: 180px;
+  padding: 12px;
+  font-size: 1rem;
 }
 
 /* circular restart button in top right corner */
@@ -167,6 +172,6 @@ p.attempts{ text-align:center; color:var(--muted); margin-top:8px }
 /* responsive tweaks */
 @media (max-width:720px){
   .guess-input{ width:70%; max-width:260px }
+  .btn-guess{ width:70%; max-width:260px; padding:10px }
   .game-row .right{ gap:8px }
-  .btn{ padding:10px 12px }
 }
