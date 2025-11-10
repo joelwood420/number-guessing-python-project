@@ -7,7 +7,6 @@ from game import generate_random_number, check_guess
 # Create Flask application instance
 app = Flask(__name__)
 # Set secret key for session management (used to encrypt session data)
-# Set secret key for session management (used to encrypt session data)
 app.secret_key = 'your_secret_key'
 
 
@@ -54,8 +53,7 @@ def guess():
         session.pop('number_to_guess', None)
         session.pop('attempts', None)
     else:
-        # If guess was wrong, use the feedback message from check_guess function
-        # (e.g., "Too high!" or "Too low!")
+        # If guess was wrong, use the feedback message from check_guess (e.g., "Too high!" or "Too low!")
         message = result
 
     # Render the game page with the appropriate message

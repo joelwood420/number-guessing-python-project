@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const attemptsDisplay = document.getElementById('attempts');    // Element to show attempt count
     
     // Initialize attempt counter on the client side
-    // Initialize attempt counter on the client side
     let attempts = 0;
 
     // Add event listener to handle form submission
@@ -31,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Clear the input field after submission for better UX
         // Clear the input field after submission for better UX
         guessInput.value = '';
-    });
 
     // Function to send the user's guess to the server and handle the response
     function checkGuess(guess) {
