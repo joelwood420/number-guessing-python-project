@@ -1,4 +1,6 @@
 /* Number Guessing Game — neon purple, black and white theme */
+
+/* CSS Custom Variables - Define color palette */
 :root{
   --bg1:#1a0f2e;
   --bg2:#000000;
@@ -10,8 +12,13 @@
   --neon-glow: #d946ef;
 }
 
+/* Universal selector - Reset box sizing */
 *{box-sizing:border-box}
+
+/* HTML and Body elements - Full height setup */
 html,body{height:100%}
+
+/* Body element - Main layout and background */
 body{
   margin:0;
   font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
@@ -24,8 +31,10 @@ body{
   padding:24px;
 }
 
+/* App wrapper - Max width container */
 .app{width:100%; max-width:920px}
 
+/* Main container - Game card styling */
 .container{
   background: var(--card-bg);
   border-radius:16px;
@@ -36,6 +45,7 @@ body{
   position: relative;
 }
 
+/* Main heading - Game title styling */
 h1{
   margin:0 0 18px 0;
   text-align:center;
@@ -44,7 +54,7 @@ h1{
   text-shadow: 0 0 10px var(--neon-glow);
 }
 
-/* overall layout: input above, buttons below (centered) */
+/* Game row container - Layout for input and buttons */
 .game-row{
   display:flex;
   flex-direction:column;
@@ -53,7 +63,7 @@ h1{
   align-items:center;
 }
 
-/* centered large square input */
+/* Guess input field - Square input styling */
 .guess-input{
   width:70%;
   max-width:360px;
@@ -72,6 +82,8 @@ h1{
   -webkit-appearance: none;
   margin-left: 24px;
 }
+
+/* Guess input focus state - Enhanced styling when active */
 .guess-input:focus{
   outline:none;
   transform: translateY(-3px);
@@ -79,14 +91,14 @@ h1{
   border-color: var(--neon-glow);
 }
 
-/* hide native number spinner controls */
+/* Input number spinner controls - Hide default arrows */
 .guess-input::-webkit-outer-spin-button,
 .guess-input::-webkit-inner-spin-button{
   -webkit-appearance:none;
   margin:0;
 }
 
-/* button row under the input - now only for guess button */
+/* Button container - Layout for buttons below input */
 .game-row .right{
   display:flex;
   gap:12px;
@@ -94,6 +106,7 @@ h1{
   justify-content:center;
 }
 
+/* Base button styling - Common button properties */
 .btn{
   display:inline-flex;
   align-items:center;
@@ -110,7 +123,7 @@ h1{
   background-clip: padding-box;
 }
 
-/* neon purple styled buttons */
+/* Guess button - Submit guess button styling */
 .btn-guess{
   background: linear-gradient(180deg,var(--neon-purple-1),var(--neon-purple-2));
   width: 70%;
@@ -119,7 +132,7 @@ h1{
   font-size: 1rem;
 }
 
-/* circular restart button in top right corner */
+/* Restart button - Circular restart button in corner */
 .btn-restart{
   position: absolute;
   top: 16px;
@@ -142,6 +155,7 @@ h1{
   transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
 }
 
+/* Restart button icon - Pseudo-element for refresh symbol */
 .btn-restart::before {
   content: "↻";
   font-size: 20px;
@@ -152,14 +166,20 @@ h1{
   pointer-events: none; /* ensure clicks go through to button */
 }
 
+/* Button hover state - Enhanced styling on mouse over */
 .btn:hover{ 
   transform: translateY(-3px); 
   box-shadow: 0 14px 30px rgba(147,51,234,0.3), 0 0 20px var(--neon-glow);
   filter: brightness(1.1);
 }
+
+/* Button active state - Styling when button is clicked */
 .btn:active{ transform: translateY(-1px) scale(.995) }
+
+/* Button focus state - Accessibility outline */
 .btn:focus{ outline: 3px solid var(--neon-glow); outline-offset: 3px }
 
+/* Message display - Feedback text styling */
 .msg, .message{
   margin-top:18px;
   text-align:center;
@@ -167,9 +187,10 @@ h1{
   font-weight:600;
 }
 
+/* Attempts counter - Display attempt count */
 p.attempts{ text-align:center; color:var(--muted); margin-top:8px }
 
-/* responsive tweaks */
+/* Media query - Responsive design for mobile */
 @media (max-width:720px){
   .guess-input{ width:70%; max-width:260px }
   .btn-guess{ width:70%; max-width:260px; padding:10px }
